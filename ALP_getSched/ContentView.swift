@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+    @State private var selectedDate = Date()
+        private let dateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            return formatter
+        }()
+        
+        var body: some View {
+            VStack {
+                DatePicker("Select a date and time", selection: $selectedDate, displayedComponents: [.hourAndMinute, .date])
+                Text("Selected date: \(dateFormatter.string(from: selectedDate))")
+            }
         }
-        .padding()
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {

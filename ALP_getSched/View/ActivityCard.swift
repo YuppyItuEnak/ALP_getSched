@@ -1,0 +1,20 @@
+//
+//  ActivityCard.swift
+//  ALP_getSched
+//
+//  Created by MacBook Pro on 15/05/23.
+//
+
+import SwiftUI
+
+struct ActivityCard: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct ActivityCard_Previews: PreviewProvider {
+    static var previews: some View {
+        ActivityCard()
+    }
+}

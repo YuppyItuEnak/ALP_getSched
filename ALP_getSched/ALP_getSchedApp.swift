@@ -11,7 +11,9 @@ import SwiftUI
 struct ALP_getSchedApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                ActivityListView()
+            }
         }
     }
 }
