@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct AddActivityView: View {
+    @EnvironmentObject var activityViewModel: ActivityViewModel
     
     @State var activityName: String = ""
     @State var description: String = ""
     @State var dateTime = Date()
     @State var time = Date()
+    @State var isComplete: Bool = false
     @State var isCategoryPersonal: Bool = false
     @State var isCategoryProject: Bool = false
+
     
     var body: some View {
         ScrollView{
@@ -33,7 +36,7 @@ struct AddActivityView: View {
                         Toggle("Project", isOn: $isCategoryProject)
                     }
                 
-                        Button(action: {}, label: {
+                Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
                             Text("Save".uppercased())
                                 .foregroundColor(.white)
                                 .font(.headline)
@@ -47,6 +50,7 @@ struct AddActivityView: View {
             .padding(.horizontal)
         }
     }
+
 
     
     

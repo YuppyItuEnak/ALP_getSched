@@ -31,8 +31,25 @@ class ActivityViewModel: ObservableObject{
     }
     
     //function untuk menambah activity 
-    func addItem(activityName: String, description: String, date: String, time: String, isComplete: Bool, isCategoryProject: Bool, isCategoryPersonal: Bool){
-        let newItem = ActivityModel(activityName: activityName, description: description, date: date, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
+    func addItem(activityName: String, description: String, date: Date, time: Date, isComplete: Bool, isCategoryProject: Bool, isCategoryPersonal: Bool){
+        let forSavingDate = dateFormat(date: date)
+        let forSavingTime = timeFormat(time: time)
+        let newItem = ActivityModel(activityName: activityName, description: description, date: forSavingDate, time: forSavingTime, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
         activities.append(newItem)
+    }
+    
+    func dateFormat(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dataString = dateFormatter.string(from: date)
+        
+        return dataString
+    }
+    func timeFormat(time: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let dataString = dateFormatter.string(from: time)
+        
+        return dataString
     }
 }
