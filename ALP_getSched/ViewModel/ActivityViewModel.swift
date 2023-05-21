@@ -15,7 +15,7 @@ class ActivityViewModel: ObservableObject{
         getActivities()
     }
     
-    //function yang berisikan variable newItems sebagai dummydata untuk menyimpan activity
+    // function yang berisikan variable newItems sebagai dummydata untuk menyimpan activity
     func getActivities(){
         let newItems = [
             ActivityModel(activityName: "First Item", description: "first Description", date: "May 15, 2023", time: "12:00 AM", isComplete: false, isCategoryProject: true, isCategoryPersonal: false),
@@ -25,12 +25,12 @@ class ActivityViewModel: ObservableObject{
         activities.append(contentsOf: newItems)
     }
     
-    //function untuk mendelete activity berdasarkan index
+    // function untuk mendelete activity berdasarkan index
     func deleteItem(indexSet: IndexSet){
         activities.remove(atOffsets: indexSet)
     }
     
-    //function untuk menambah activity 
+    // function untuk menambah activity
     func addItem(activityName: String, description: String, date: Date, time: Date, isComplete: Bool, isCategoryProject: Bool, isCategoryPersonal: Bool){
         let forSavingDate = dateFormat(date: date)
         let forSavingTime = timeFormat(time: time)
@@ -38,6 +38,7 @@ class ActivityViewModel: ObservableObject{
         activities.append(newItem)
     }
     
+    // function untuk memformat tanggal
     func dateFormat(date: Date) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -45,6 +46,8 @@ class ActivityViewModel: ObservableObject{
         
         return dataString
     }
+    
+    //function untuk memformat waktu
     func timeFormat(time: Date) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"

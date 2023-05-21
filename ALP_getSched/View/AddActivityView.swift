@@ -17,26 +17,38 @@ struct AddActivityView: View {
     @State var isComplete: Bool = false
     @State var isCategoryPersonal: Bool = false
     @State var isCategoryProject: Bool = false
-
+    
     
     var body: some View {
         ScrollView{
-            VStack {
+                VStack {
                     Section(header: Text("Activity Form")){
                         //Textfield untuk Activity Name
                         TextField("Activity Name", text: $activityName)
+                            .padding(.top)
+                            .padding(.bottom)
+                        
+                        
+                        
                         //Textfield untuk description
                         TextField("Description", text: $description)
+                            .padding(.bottom)
                         //Datepicker untuk user dapat memilih  tanggal yang diinginkan
                         DatePicker("Date: ", selection: $dateTime, displayedComponents: [.date])
+                            .padding(.bottom)
                         //Datepicker untuk user dapat memilih waktu yang diinginkan
                         DatePicker("Time:", selection: $time, displayedComponents: [.hourAndMinute])
+                            .padding(.bottom)
                         //Untuk set kategori apakah kategori ini personal atau project
                         Toggle("Personal", isOn: $isCategoryPersonal)
+                            .padding(.bottom)
                         Toggle("Project", isOn: $isCategoryProject)
+                            .padding(.bottom)
                     }
-                
-                Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
+                    
+                    
+                    if activityName != "" && description != "" {
+                        Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
                             Text("Save".uppercased())
                                 .foregroundColor(.white)
                                 .font(.headline)
@@ -45,22 +57,25 @@ struct AddActivityView: View {
                                 .background(Color.accentColor)
                                 .cornerRadius(10)
                         })
-    
-            }
-            .padding(.horizontal)
+                        .onSubmit {
+//                            ActivityListView()
+                        }
+                    } else {
+                        Button(action: {}, label: {
+                            Text("Save".uppercased())
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .frame(height: 44)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.accentColor)
+                                .cornerRadius(10)
+                        })
+                    }
+                    
+                }
+                .padding(.horizontal)
         }
     }
-
-
-    
-    
-    // date dan time formatter
-//    func getFormattedDateString() -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        dateFormatter.timeStyle = .short
-//        return dateFormatter.string(from: dateTime)
-//    }
 }
 
 struct AddActivityView_Previews: PreviewProvider {
