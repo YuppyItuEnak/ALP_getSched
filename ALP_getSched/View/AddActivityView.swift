@@ -22,67 +22,59 @@ struct AddActivityView: View {
     
     var body: some View {
         ScrollView{
-                VStack {
-                    Section(header: Text("Activity Form")){
-                        //Textfield untuk Activity Name
-                        TextField("Activity Name", text: $activityName)
-                            .padding(.top)
-                            .padding(.bottom)
-                        
-                        
-                        
-                        //Textfield untuk description
-                        TextField("Description", text: $description)
-                            .padding(.bottom)
-                        //Datepicker untuk user dapat memilih  tanggal yang diinginkan
-                        DatePicker("Date: ", selection: $dateTime, displayedComponents: [.date])
-                            .padding(.bottom)
-                        //Datepicker untuk user dapat memilih waktu yang diinginkan
-                        DatePicker("Time:", selection: $time, displayedComponents: [.hourAndMinute])
-                            .padding(.bottom)
-                        //Untuk set kategori apakah kategori ini personal atau project
-                        Toggle("Personal", isOn: $isCategoryPersonal)
-                            .padding(.bottom)
-                        Toggle("Project", isOn: $isCategoryProject)
-                            .padding(.bottom)
-                    }
-                    
-                    
-                    if activityName != "" && description != "" {
-                        Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
-                            Text("Save".uppercased())
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .frame(height: 44)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.accentColor)
-                                .cornerRadius(10)
-                        })
-                        .onSubmit {
-//                            ActivityListView()
-                        }
-                    } else {
-                        Button(action: {
-                            if activityName == "" || description == "" {
-                                isValid = true
-                            }
-                        }, label: {
-                            Text("Save".uppercased())
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .frame(height: 44)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.accentColor)
-                                .cornerRadius(10)
-                        })
-                        .alert(isPresented: $isValid){
-                            Alert(title:  Text("Title or Description is empty"))
-                        }
-                        
-                    }
-                    
+            VStack {
+                Section(header: Text("Activity Form")){
+                    //Textfield untuk Activity Name
+                    TextField("Activity Name", text: $activityName)
+                        .padding(.top)
+                        .padding(.bottom)
+                    //Textfield untuk description
+                    TextField("Description", text: $description)
+                        .padding(.bottom)
+                    //Datepicker untuk user dapat memilih  tanggal yang diinginkan
+                    DatePicker("Date: ", selection: $dateTime, displayedComponents: [.date])
+                        .padding(.bottom)
+                    //Datepicker untuk user dapat memilih waktu yang diinginkan
+                    DatePicker("Time:", selection: $time, displayedComponents: [.hourAndMinute])
+                        .padding(.bottom)
+                    //Untuk set kategori apakah kategori ini personal atau project
+                    Toggle("Personal", isOn: $isCategoryPersonal)
+                        .padding(.bottom)
+                    Toggle("Project", isOn: $isCategoryProject)
+                        .padding(.bottom)
                 }
-                .padding(.horizontal)
+                
+                
+                if activityName != "" && description != "" {
+                    Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
+                        Text("Save".uppercased())
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .frame(height: 44)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.accentColor)
+                            .cornerRadius(10)
+                    })
+                } else {
+                    Button(action: {
+                        if activityName == "" || description == "" {
+                            isValid = true
+                        }
+                    }, label: {
+                        Text("Save".uppercased())
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .frame(height: 44)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.accentColor)
+                            .cornerRadius(10)
+                    })
+                    .alert(isPresented: $isValid){
+                        Alert(title:  Text("Title or Description is empty"))
+                    }
+                }
+            }
+            .padding(.horizontal)
         }
     }
 }
