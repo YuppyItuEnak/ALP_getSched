@@ -26,7 +26,7 @@ struct ActivityListCard: View {
                         .foregroundColor(.secondary)
                     Spacer()
                     if activity.isCategoryProject == true && activity.isCategoryPersonal == false{
-                        Text("Porject")
+                        Text("Project")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
