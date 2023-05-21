@@ -17,6 +17,7 @@ struct AddActivityView: View {
     @State var isComplete: Bool = false
     @State var isCategoryPersonal: Bool = false
     @State var isCategoryProject: Bool = false
+    @State private var isValid: Bool = false
     
     
     var body: some View {
@@ -61,7 +62,11 @@ struct AddActivityView: View {
 //                            ActivityListView()
                         }
                     } else {
-                        Button(action: {}, label: {
+                        Button(action: {
+                            if activityName == "" || description == "" {
+                                isValid = true
+                            }
+                        }, label: {
                             Text("Save".uppercased())
                                 .foregroundColor(.white)
                                 .font(.headline)
@@ -70,6 +75,10 @@ struct AddActivityView: View {
                                 .background(Color.accentColor)
                                 .cornerRadius(10)
                         })
+                        .alert(isPresented: $isValid){
+                            Alert(title:  Text("Title or Description is empty"))
+                        }
+                        
                     }
                     
                 }
