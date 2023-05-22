@@ -15,7 +15,7 @@ struct ActivityListView: View {
             NavigationStack {
                 List{
                     ForEach(activityViewModel.activities){ activities in
-                        ActivityListCard(activity: activities)
+                    ActivityListCard(activity: activities)
                     }
                 }
                 .navigationTitle("To Do List")
@@ -43,8 +43,9 @@ struct ActivityListView: View {
 
 
 struct ActivityListView_Previews: PreviewProvider {
+    static let activityViewModel = ActivityViewModel()
     static var previews: some View {
         ActivityListView()
-            .environmentObject(ActivityViewModel())
+            .environmentObject(activityViewModel)
     }
 }

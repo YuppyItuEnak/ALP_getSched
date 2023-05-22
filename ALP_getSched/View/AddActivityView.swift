@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddActivityView: View {
     @EnvironmentObject var activityViewModel: ActivityViewModel
+    @Environment(\.dismiss) var dismiss
     
     @State var activityName: String = ""
     @State var description: String = ""
@@ -46,18 +47,32 @@ struct AddActivityView: View {
                 
                 
                 if activityName != "" && description != "" {
-                    Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
-                        Text("Save".uppercased())
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            .frame(height: 44)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.accentColor)
-                            .cornerRadius(10)
-                    })
+                    //                    Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
+                    //                        Text("Save".uppercased())
+                    //                            .foregroundColor(.white)
+                    //                            .font(.headline)
+                    //                            .frame(height: 44)
+                    //                            .frame(maxWidth: .infinity)
+                    //                            .background(Color.accentColor)
+                    //                            .cornerRadius(10)
+                    //                    })
+                    Button("Save".uppercased()){
+                        activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
+                        isValid = true
+                        dismiss()
+                    }
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .frame(height: 44)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.accentColor)
+                    .cornerRadius(10)
+                    .alert(isPresented: $isValid){
+                        Alert(title:  Text("Activity Saved"))
+                    }
                 } else {
                     Button(action: {
-                        if activityName == "" || description == "" {
+                        if activityName == "" {
                             isValid = true
                         }
                     }, label: {
@@ -70,7 +85,7 @@ struct AddActivityView: View {
                             .cornerRadius(10)
                     })
                     .alert(isPresented: $isValid){
-                        Alert(title:  Text("Title or Description is empty"))
+                        Alert(title:  Text("Title is empty"))
                     }
                 }
             }

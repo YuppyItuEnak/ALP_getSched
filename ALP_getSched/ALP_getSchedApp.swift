@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct ALP_getSchedApp: App {
+    @StateObject private var activityViewModel = ActivityViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView{
                 ActivityListView()
+                    .environmentObject(activityViewModel)
             }
         }
     }

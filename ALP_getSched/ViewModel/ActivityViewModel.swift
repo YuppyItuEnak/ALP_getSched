@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class ActivityViewModel: ObservableObject{
+class ActivityViewModel: ObservableObject {
     // variable yang bisa digunakan di semua class dan menampung isi dari model
     @Published var activities: [ActivityModel] = []
     
