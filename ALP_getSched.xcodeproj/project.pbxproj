@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042D3EF02A1C4C71009CFEB7 /* EditActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D3EEF2A1C4C71009CFEB7 /* EditActivityView.swift */; };
+		042D3EF22A1C4C89009CFEB7 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D3EF12A1C4C89009CFEB7 /* TrackingView.swift */; };
+		042D3EF42A1C4C99009CFEB7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D3EF32A1C4C99009CFEB7 /* ProfileView.swift */; };
 		045BEBA12A09EFE3002C5DAE /* ALP_getSchedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEBA02A09EFE3002C5DAE /* ALP_getSchedApp.swift */; };
 		045BEBA52A09EFE4002C5DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045BEBA42A09EFE4002C5DAE /* Assets.xcassets */; };
 		045BEBA82A09EFE4002C5DAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045BEBA72A09EFE4002C5DAE /* Preview Assets.xcassets */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042D3EEF2A1C4C71009CFEB7 /* EditActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityView.swift; sourceTree = "<group>"; };
+		042D3EF12A1C4C89009CFEB7 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
+		042D3EF32A1C4C99009CFEB7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		045BEB9D2A09EFE3002C5DAE /* ALP_getSched.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALP_getSched.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045BEBA02A09EFE3002C5DAE /* ALP_getSchedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_getSchedApp.swift; sourceTree = "<group>"; };
 		045BEBA42A09EFE4002C5DAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +149,9 @@
 				045BEC1E2A120613002C5DAE /* ActivityListView.swift */,
 				045BEC222A120890002C5DAE /* ActivityListCard.swift */,
 				045BEC262A1220ED002C5DAE /* AddActivityView.swift */,
+				042D3EEF2A1C4C71009CFEB7 /* EditActivityView.swift */,
+				042D3EF12A1C4C89009CFEB7 /* TrackingView.swift */,
+				042D3EF32A1C4C99009CFEB7 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,10 +303,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				045BEC252A121960002C5DAE /* ActivityViewModel.swift in Sources */,
+				042D3EF42A1C4C99009CFEB7 /* ProfileView.swift in Sources */,
 				045BEC232A120890002C5DAE /* ActivityListCard.swift in Sources */,
 				045BEBD12A09F932002C5DAE /* ActivityModel.swift in Sources */,
+				042D3EF22A1C4C89009CFEB7 /* TrackingView.swift in Sources */,
 				045BEC272A1220ED002C5DAE /* AddActivityView.swift in Sources */,
 				045BEBA12A09EFE3002C5DAE /* ALP_getSchedApp.swift in Sources */,
+				042D3EF02A1C4C71009CFEB7 /* EditActivityView.swift in Sources */,
 				045BEC1F2A120613002C5DAE /* ActivityListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
