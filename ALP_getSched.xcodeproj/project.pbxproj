@@ -23,6 +23,8 @@
 		045BEC232A120890002C5DAE /* ActivityListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEC222A120890002C5DAE /* ActivityListCard.swift */; };
 		045BEC252A121960002C5DAE /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEC242A121960002C5DAE /* ActivityViewModel.swift */; };
 		045BEC272A1220ED002C5DAE /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEC262A1220ED002C5DAE /* AddActivityView.swift */; };
+		045BEC362A209912002C5DAE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEC352A209912002C5DAE /* HomeView.swift */; };
+		045BEC392A20A17A002C5DAE /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 045BEC382A20A17A002C5DAE /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 		045BEC222A120890002C5DAE /* ActivityListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListCard.swift; sourceTree = "<group>"; };
 		045BEC242A121960002C5DAE /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		045BEC262A1220ED002C5DAE /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
+		045BEC352A209912002C5DAE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045BEC392A20A17A002C5DAE /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +160,7 @@
 				042D3EEF2A1C4C71009CFEB7 /* EditActivityView.swift */,
 				042D3EF12A1C4C89009CFEB7 /* TrackingView.swift */,
 				042D3EF32A1C4C99009CFEB7 /* ProfileView.swift */,
+				045BEC352A209912002C5DAE /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +199,9 @@
 			dependencies = (
 			);
 			name = ALP_getSched;
+			packageProductDependencies = (
+				045BEC382A20A17A002C5DAE /* SwiftUICharts */,
+			);
 			productName = ALP_getSched;
 			productReference = 045BEB9D2A09EFE3002C5DAE /* ALP_getSched.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 045BEB942A09EFE3002C5DAE;
+			packageReferences = (
+				045BEC372A20A17A002C5DAE /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 045BEB9E2A09EFE3002C5DAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -317,6 +328,7 @@
 				045BEC272A1220ED002C5DAE /* AddActivityView.swift in Sources */,
 				042D3EF82A204457009CFEB7 /* ProfileViewModel.swift in Sources */,
 				045BEBA12A09EFE3002C5DAE /* ALP_getSchedApp.swift in Sources */,
+				045BEC362A209912002C5DAE /* HomeView.swift in Sources */,
 				042D3EF02A1C4C71009CFEB7 /* EditActivityView.swift in Sources */,
 				045BEC1F2A120613002C5DAE /* ActivityListView.swift in Sources */,
 			);
@@ -643,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		045BEC372A20A17A002C5DAE /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		045BEC382A20A17A002C5DAE /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045BEC372A20A17A002C5DAE /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 045BEB952A09EFE3002C5DAE /* Project object */;
 }

@@ -15,7 +15,7 @@ struct ActivityListView: View {
             NavigationStack {
                 List{
                     ForEach(activityViewModel.activities){ activities in
-                    ActivityListCard(activity: activities)
+                        ActivityListCard(activity: activities)
                     }
                 }
                 .navigationTitle("To Do List")
@@ -23,20 +23,6 @@ struct ActivityListView: View {
                     NavigationLink("Add", destination: AddActivityView())
                 }
             }
-            // tab untuk home
-            .tabItem{
-                Label("Home", systemImage: "square.split.2x2")
-            }
-            // tab untuk graph
-            Text("Graph")
-                .tabItem{
-                    Label("Graph", systemImage: "chart.dots.scatter")
-                }
-            // tab untuk profile
-            Text("Profile")
-                .tabItem{
-                    Label("Profile", systemImage: "person.2.badge.gearshape")
-                }
         }
     }
 }
