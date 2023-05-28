@@ -15,10 +15,12 @@ struct ActivityListView: View {
             NavigationStack {
                 List{
                     ForEach(activityViewModel.activities){ activities in
+                        
                         ActivityListCard(activity: activities)
                     }
+                    .onDelete(perform: activityViewModel.deleteItem)
                 }
-                .navigationTitle("To Do List")
+                .navigationTitle("To Do List ")
                 .toolbar{
                     NavigationLink("Add", destination: AddActivityView())
                 }

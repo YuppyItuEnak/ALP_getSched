@@ -13,45 +13,56 @@ struct TrackingView: View {
     @EnvironmentObject var activityViewModel: ActivityViewModel
     
     private let calendar = Calendar.current
-        private let currentDate = Date()
-        private let currentYear = Calendar.current.component(.year, from: Date())
-        private let currentMonth = Calendar.current.component(.month, from: Date())
-        private let currentDay = Calendar.current.component(.day, from: Date())
+    private let currentDate = Date()
+    private let currentYear = Calendar.current.component(.year, from: Date())
+    private let currentMonth = Calendar.current.component(.month, from: Date())
+    private let currentDay = Calendar.current.component(.day, from: Date())
       
     
     var body: some View {
         let activityCounts = aggregateActivityCounts()
-        
+    
         ScrollView{
             VStack {
-                
-                Text("Calendar")
-                    .font(.title)
-                    .padding()
-                        
-                            VStack(spacing: 10) {
-                                Text("\(calendar.component(.year, from: currentDate))")
-                                    .font(.title2)
+                //Calendar
+                VStack {
+                    Text("Calendar")
+                        .font(.title)
+                        .padding()
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.white)
+                            .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 2)
                                 
-                                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
-                                    ForEach(1..<32) { day in
-                                        if let date = createDate(year: currentYear, month: currentMonth, day: day),
-                                           calendar.component(.month, from: date) == currentMonth {
-                                            Text("\(day)")
-                                                .fontWeight(.bold)
-                                                .frame(width: 30, height: 30)
-                                                .background(day == currentDay ? Color.blue : Color.clear)
-                                                .clipShape(Circle())
-                                        } else {
-                                            Text("")
-                                        }
-                                    }
+                        VStack(spacing: 10) {
+                            Text("\(calendar.component(.year, from: currentDate))")
+                                .font(.title2)
+                                    
+                            HStack {
+                                ForEach(calendar.shortWeekdaySymbols, id: \.self) { day in
+                                    Text(day)
+                                        .font(.callout)
+                                        .fontWeight(.semibold)
+                                        .frame(maxWidth: .infinity)
                                 }
                             }
-                            .padding()
-//                                Spacer()
+                                    
+                            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
+                                ForEach(getDaysInMonth(), id: \.self) { day in
+                                    Text("\(day)")
+                                        .fontWeight(.bold)
+                                        .frame(width: 30, height: 30)
+                                        .background(day == currentDay ? Color.blue : Color.clear)
+                                        .clipShape(Circle())
+                                }
+                            }
+                        }
+                        .padding()
+                    }
+                    .padding()
+                }
                 
-                
+                //Activity Grafik
                 Text("Activity Graph")
                     .font(.title)
                 Text("Activity For The Year")
@@ -75,13 +86,14 @@ struct TrackingView: View {
                     
                 }
                 
-                VStack {
+                VStack(alignment: .leading) {
                     HStack {
                         RoundedRectangle(cornerRadius: 10)
-                                   .foregroundColor(.orange)
-                                   .frame(width: 10, height: 10)
-                                   .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 2)
+                            .foregroundColor(.orange)
+                            .frame(width: 10, height: 10)
+                            .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 2)
                                    
+                       
                         Text("Grafik dari jumlah activity per bulan")
                             .font(.caption)
                             .foregroundColor(.secondary)
@@ -89,14 +101,18 @@ struct TrackingView: View {
                     }
                     
                     HStack {
-                        Rectangle()
-                            .foregroundColor(.white)
-                            .frame(width: 10, height: 10)
-                            .cornerRadius(10)
-                            .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 2)
-                             
-        
-                        Text("Nama Bulan dalam setahun")
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.white)
+                                .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 2)
+                            
+                            Text("January")
+                                .font(.caption)
+                                .foregroundColor(.black)
+                        }
+                        .frame(width: 100, height: 10)
+                        
+                        Text("Nama Bulan dalan setahun")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -118,19 +134,25 @@ struct TrackingView: View {
                             .foregroundColor(.secondary)
                     }
                 }
-                
+              
             }
         }
                
     }
     
+    private func getDaysInMonth() -> [Int] {
+        let currentYear = calendar.component(.year, from: currentDate)
+        let currentMonth = calendar.component(.month, from: currentDate)
+        let startOfMonth = calendar.date(from: DateComponents(year: currentYear, month: currentMonth, day: 1))!
+        let range = calendar.range(of: .day, in: .month, for: startOfMonth)!
+        return Array(range.lowerBound..<range.upperBound)
+    }
+        
     private func createDate(year: Int, month: Int, day: Int) -> Date? {
-           var components = DateComponents()
-           components.year = year
-           components.month = month
-           components.day = day
-           return Calendar.current.date(from: components)
-       }
+        let dateComponents = DateComponents(year: year, month: month, day: day)
+        return calendar.date(from: dateComponents)
+    }
+    
     
     
     //nge count activity per bulan dan menampilkan bulan dengan format MMMM
