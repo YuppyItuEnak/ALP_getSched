@@ -20,7 +20,6 @@ struct AddActivityView: View {
     @State var isCategoryProject: Bool = false
     @State private var isValid: Bool = false
     
-    
     var body: some View {
         ScrollView{
             VStack {
@@ -90,6 +89,8 @@ struct AddActivityView: View {
             }
             .padding(.horizontal)
         }
+        
+       
     }
 }
 
