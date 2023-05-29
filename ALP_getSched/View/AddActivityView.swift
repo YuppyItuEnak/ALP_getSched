@@ -16,7 +16,7 @@ struct AddActivityView: View {
     @State var dateTime = Date()
     @State var time = Date()
     @State var isComplete: Bool = false
-    @State var isCategoryPersonal: Bool = false
+    @State var isCategoryPersonal: Bool = true
     @State var isCategoryProject: Bool = false
     @State private var isValid: Bool = false
     
@@ -45,8 +45,7 @@ struct AddActivityView: View {
                         .padding(.bottom)
                 }
                 
-                
-                if activityName != "" && description != "" {
+                if activityName != "" {
                     //                    Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
                     //                        Text("Save".uppercased())
                     //                            .foregroundColor(.white)
@@ -58,7 +57,7 @@ struct AddActivityView: View {
                     //                    })
                     Button("Save".uppercased()){
                         activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
-                        isValid = true
+//                        isValid = false
                         dismiss()
                     }
                     .foregroundColor(.white)
