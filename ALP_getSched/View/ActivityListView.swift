@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ActivityListView: View {
     
+    
+    //Menampilkan list data activity
     @EnvironmentObject var activityViewModel: ActivityViewModel
     var body: some View {
         TabView{
