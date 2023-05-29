@@ -12,6 +12,8 @@ struct TrackingView: View {
     
     @EnvironmentObject var activityViewModel: ActivityViewModel
     
+    
+    //Variable untuk pembuatan calendar
     private let calendar = Calendar.current
     private let currentDate = Date()
     private let currentYear = Calendar.current.component(.year, from: Date())
@@ -140,6 +142,8 @@ struct TrackingView: View {
                
     }
     
+    
+    //membuat hari dalam sebulan dan menampilkan dalam current date
     private func getDaysInMonth() -> [Int] {
         let currentYear = calendar.component(.year, from: currentDate)
         let currentMonth = calendar.component(.month, from: currentDate)
@@ -148,10 +152,8 @@ struct TrackingView: View {
         return Array(range.lowerBound..<range.upperBound)
     }
         
-    private func createDate(year: Int, month: Int, day: Int) -> Date? {
-        let dateComponents = DateComponents(year: year, month: month, day: day)
-        return calendar.date(from: dateComponents)
-    }
+    
+    
     
     
     
@@ -191,6 +193,7 @@ struct TrackingView: View {
             return activityCounts.sorted { dateFormatter.monthSymbols.firstIndex(of: $0.0)! < dateFormatter.monthSymbols.firstIndex(of: $1.0)! }
         }
         
+    //Format bulan sesuai nama bulan
         func xAxisLabels() -> [String] {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMMM"
