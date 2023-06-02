@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ActivityModel: Identifiable{
+struct ActivityModel: Identifiable, Codable{
     let id: String
     var activityName: String
     var description: String

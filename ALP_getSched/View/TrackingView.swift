@@ -8,18 +8,22 @@
 import SwiftUI
 import SwiftUICharts
 
+
+
 struct TrackingView: View {
     
     @EnvironmentObject var activityViewModel: ActivityViewModel
+    @State private var currentMonth: Date = Date()
+    @State private var selectedActivities: [ActivityModel] = []
+    @State private var selectedDate: Date?
+
     
-    
-    //Variable untuk pembuatan calendar
     private let calendar = Calendar.current
-    private let currentDate = Date()
+    private var currentDate = Date()
     private let currentYear = Calendar.current.component(.year, from: Date())
-    private let currentMonth = Calendar.current.component(.month, from: Date())
     private let currentDay = Calendar.current.component(.day, from: Date())
       
+    
     
     var body: some View {
         let activityCounts = aggregateActivityCounts()
@@ -27,6 +31,7 @@ struct TrackingView: View {
         ScrollView{
             VStack {
                 //Calendar
+
                 VStack {
                     Text("Calendar")
                         .font(.title)
@@ -35,34 +40,72 @@ struct TrackingView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(.white)
                             .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 2)
-                                
+
                         VStack(spacing: 10) {
-                            Text("\(calendar.component(.year, from: currentDate))")
-                                .font(.title2)
+                            HStack(spacing: 20){
+                                VStack(alignment: .leading, spacing:  10){
+                                    Text("\(currentMonth, formatter: yearFormatter)")
+                                        .font(.caption)
+                                        .fontWeight(.semibold)
                                     
+                                    Text("\(currentMonth, formatter: monthFormatter)")
+                                        .font(.title.bold())
+                                }
+                                Spacer(minLength: 0)
+                                
+                                Button{
+                                    withAnimation{
+                                        currentMonth = calendar.date(byAdding: .month, value: -1, to: currentMonth)!
+                                    }
+                                }label: {
+                                    Image(systemName: "chevron.left")
+                                        .font(.title2)
+                                }
+                                
+                                Button{
+                                    withAnimation{
+                                        currentMonth = calendar.date(byAdding: .month, value: 1, to: currentMonth)!
+                                    }
+                                }label: {
+                                    Image(systemName: "chevron.right")
+                                        .font(.title2)
+                                }
+                            }
+                            .padding(.horizontal)
+                            
                             HStack {
-                                ForEach(calendar.shortWeekdaySymbols, id: \.self) { day in
+                                ForEach(daysOfWeek, id: \.self) { day in
                                     Text(day)
-                                        .font(.callout)
+                                        .font(.caption)
                                         .fontWeight(.semibold)
                                         .frame(maxWidth: .infinity)
                                 }
                             }
-                                    
+                            .padding(.horizontal)
+                            
                             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
-                                ForEach(getDaysInMonth(), id: \.self) { day in
+                                ForEach(daysInMonth, id: \.self) { day in
                                     Text("\(day)")
                                         .fontWeight(.bold)
                                         .frame(width: 30, height: 30)
-                                        .background(day == currentDay ? Color.blue : Color.clear)
+                                        .background(
+                                            day == currentDay ? Color.blue : Color.clear)
                                         .clipShape(Circle())
+                                        .onTapGesture {
+                                            let selectedDateComponents = calendar.dateComponents([.year, .month], from: currentMonth)
+                                            selectedDate = calendar.date(bySetting: .day, value: day, of: calendar.date(from: selectedDateComponents)!)
+
+                                        }
                                 }
                             }
+                            .padding()
                         }
                         .padding()
                     }
                     .padding()
                 }
+                
+                
                 
                 //Activity Grafik
                 Text("Activity Graph")
@@ -71,6 +114,7 @@ struct TrackingView: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
+               
                 if activityCounts.isEmpty {
                     Text("No Data")
                     
@@ -85,6 +129,7 @@ struct TrackingView: View {
                             valueSpecifier: "%.0f"
                     )
                     .padding()
+                    .frame(maxWidth: .infinity)
                     
                 }
                 
@@ -136,23 +181,38 @@ struct TrackingView: View {
                             .foregroundColor(.secondary)
                     }
                 }
+                .frame(maxWidth: .infinity)
               
             }
         }
                
     }
     
+ 
     
-    //membuat hari dalam sebulan dan menampilkan dalam current date
-    private func getDaysInMonth() -> [Int] {
-        let currentYear = calendar.component(.year, from: currentDate)
-        let currentMonth = calendar.component(.month, from: currentDate)
-        let startOfMonth = calendar.date(from: DateComponents(year: currentYear, month: currentMonth, day: 1))!
-        let range = calendar.range(of: .day, in: .month, for: startOfMonth)!
-        return Array(range.lowerBound..<range.upperBound)
-    }
+
+    
+
+    private var monthFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMMM"
+            return formatter
+        }
+    
+    private var yearFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy"
+            return formatter
+        }
+        private var daysOfWeek: [String] {
+            calendar.shortWeekdaySymbols
+        }
         
-    
+        private var daysInMonth: [Int] {
+            let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: currentMonth))!
+            let range = calendar.range(of: .day, in: .month, for: startOfMonth)!
+            return Array(range.lowerBound..<range.upperBound)
+        }
     
     
     
@@ -193,12 +253,7 @@ struct TrackingView: View {
             return activityCounts.sorted { dateFormatter.monthSymbols.firstIndex(of: $0.0)! < dateFormatter.monthSymbols.firstIndex(of: $1.0)! }
         }
         
-    //Format bulan sesuai nama bulan
-        func xAxisLabels() -> [String] {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM"
-            return dateFormatter.monthSymbols
-        }
+   
 }
 
 
@@ -208,3 +263,4 @@ struct TrackingView_Previews: PreviewProvider {
             .environmentObject(ActivityViewModel())
     }
 }
+

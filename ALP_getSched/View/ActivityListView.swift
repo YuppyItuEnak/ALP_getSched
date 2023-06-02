@@ -6,28 +6,46 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ActivityListView: View {
-    
+
     
     //Menampilkan list data activity
     @EnvironmentObject var activityViewModel: ActivityViewModel
+    @State private var currentDate: Date = Date()
+    
+   
     var body: some View {
-        TabView{
-            NavigationStack {
-                List{
-                    ForEach(activityViewModel.activities){ activities in
-                        
-                        ActivityListCard(activity: activities)
+        
+        NavigationView{
+            ZStack{
+                if activityViewModel.activities.isEmpty{
+                    Text("There is no Activity")
+                }else{
+                    List{
+                        ForEach(activityViewModel.activities){ activity in
+                            if activity.date != activityViewModel.dateFormat(date: currentDate) {
+                                Section(header: Text("Activity Lainnya")){
+                                    ActivityListCard(activity: activity)
+                                }
+                            } else {
+                                Section(header: Text("Activities untuk \(activity.date)")) {
+                                    ActivityListCard(activity: activity)
+                                }
+                            }
+                        }
+                        .onDelete(perform: activityViewModel.deleteItem)
                     }
-                    .onDelete(perform: activityViewModel.deleteItem)
-                }
-                .navigationTitle("To Do List ")
-                .toolbar{
-                    NavigationLink("Add", destination: AddActivityView())
                 }
             }
+            .listStyle(PlainListStyle())
+            .navigationTitle("To Do List ")
+            .toolbar{
+                NavigationLink("Add", destination: AddActivityView())
+            }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

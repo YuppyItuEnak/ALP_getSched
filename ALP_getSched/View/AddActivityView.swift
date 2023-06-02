@@ -16,11 +16,12 @@ struct AddActivityView: View {
     @State var dateTime = Date()
     @State var time = Date()
     @State var isComplete: Bool = false
-    @State var isCategoryPersonal: Bool = true
+    @State var isCategoryPersonal: Bool = false
     @State var isCategoryProject: Bool = false
     @State private var isValid: Bool = false
     
     var body: some View {
+        
         ScrollView{
             VStack {
                 Section(header: Text("Activity Form")){
@@ -45,17 +46,9 @@ struct AddActivityView: View {
                 }
                 
                 if activityName != "" {
-                    //                    Button(action: {activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)}, label: {
-                    //                        Text("Save".uppercased())
-                    //                            .foregroundColor(.white)
-                    //                            .font(.headline)
-                    //                            .frame(height: 44)
-                    //                            .frame(maxWidth: .infinity)
-                    //                            .background(Color.accentColor)
-                    //                            .cornerRadius(10)
-                    //                    })
                     Button("Save".uppercased()){
                         activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
+                       
 //                        isValid = false
                         dismiss()
                     }
@@ -89,8 +82,6 @@ struct AddActivityView: View {
             }
             .padding(.horizontal)
         }
-        
-       
     }
 }
 
@@ -99,5 +90,6 @@ struct AddActivityView_Previews: PreviewProvider {
         NavigationView {
             AddActivityView()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

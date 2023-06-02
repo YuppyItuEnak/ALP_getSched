@@ -21,6 +21,7 @@ extension Color {
 //navigasi view
 struct HomeView: View {
     var body: some View {
+        
             TabView{
                 ActivityListView()
                     .tabItem{
