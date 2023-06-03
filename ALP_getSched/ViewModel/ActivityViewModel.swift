@@ -44,6 +44,8 @@ class ActivityViewModel: ObservableObject {
         let newItem = ActivityModel(activityName: activityName, description: description, date: forSavingDate, time: forSavingTime, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
         activities.append(newItem)
         
+        scheduleNotification(for: newItem)
+        
     }
     
     func saveItems(){
