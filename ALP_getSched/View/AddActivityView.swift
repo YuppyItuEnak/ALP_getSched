@@ -6,6 +6,39 @@
 //
 
 import SwiftUI
+import UserNotifications
+
+class NotificationManager{
+    static let instance = NotificationManager()
+    
+    func requestAuthorization(){
+        let option : UNAuthorizationOptions = [.alert, .sound, .badge]
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: option) { success, error in
+            if let error = error{
+                print("ERROR: \(error)")
+            }else{
+                print("SUCCESS")
+            }
+        }
+    }
+    
+    func scheduleNotification(activatyName: String, dateTime: Date){
+        let content = UNMutableNotificationContent()
+        content.title = "REMINDER"
+        content.subtitle = activatyName
+        content.sound = .default
+        
+        
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: dateTime), repeats: false)
+
+        
+        let request = UNNotificationRequest(identifier: "SUCCESS", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
+    }
+}
 
 struct AddActivityView: View {
     @EnvironmentObject var activityViewModel: ActivityViewModel
@@ -16,7 +49,7 @@ struct AddActivityView: View {
     @State var dateTime = Date()
     @State var time = Date()
     @State var isComplete: Bool = false
-    @State var isCategoryPersonal: Bool = false
+    @State var isCategoryPersonal: Bool = true
     @State var isCategoryProject: Bool = false
     @State private var isValid: Bool = false
     
@@ -47,9 +80,10 @@ struct AddActivityView: View {
                 
                 if activityName != "" {
                     Button("Save".uppercased()){
+                        NotificationManager.instance.requestAuthorization()
+                        NotificationManager.instance.scheduleNotification(activatyName: activityName, dateTime: dateTime)
                         activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
-                       
-//                        isValid = false
+                        isValid = true
                         dismiss()
                     }
                     .foregroundColor(.white)
