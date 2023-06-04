@@ -10,18 +10,19 @@ import SwiftUI
 struct LoginView: View {
     @State var email = ""
     @State var password = ""
+   
     var body: some View {
         NavigationView{
             VStack{
-    //            Header
-               HeaderView()
+                //            Header
+                HeaderView(title:"GET SCHED", subtitle: "Streamline Your Task", angle: 15, background: .blue)
                 
                 
-    //            Login Form
+                //            Login Form
                 Form{
                     TextField("Email Address", text: $email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    SecureField("Password", text: $email)
+                    SecureField("Password", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button{
@@ -37,21 +38,23 @@ struct LoginView: View {
                         }
                     }
                 }
-    //            Create account
+                //            Create account
                 VStack{
                     Text("Never Use GetSched Before?")
                     NavigationLink("Create New Account",
-                                   destination: RegisterView())
-                        //                    show register
-                    }
+                                   destination:RegisterView())
+                    //                    show register
+                    
                     
                 }
-                .padding(.bottom, 50)
-                
                 Spacer()
             }
+//            .padding(.bottom, 50)
+            
+            
         }
     }
+}
 
 
 struct LoginView_Previews: PreviewProvider {
