@@ -16,7 +16,8 @@ struct LoginView: View {
                 
                 VStack{
                     //            Header
-                    HeaderView(title:"GET SCHED", subtitle: "Streamline Your Task", angle: 15, background: .blue)
+                    HeaderView(title:"GET SCHED", subtitle: "Streamline Your Task", angle: 15, background: .cyan)
+//                        .padding(.top,25)
                 }
                 .padding(.bottom)
                 
@@ -32,11 +33,15 @@ struct LoginView: View {
                         TextField("Email Address", text: $viewModel.email)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .autocorrectionDisabled()
+                            .padding(.top,7)
                         
                         SecureField("Password", text: $viewModel.password)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .autocorrectionDisabled()
                         
+                    Spacer()
+                    
+                        .padding(.top,20)
                         Button{
                             viewModel.login()
                         }label: {
@@ -59,12 +64,18 @@ struct LoginView: View {
                     //            Create account
                     VStack{
                         Text("Never Use GetSched Before?")
-                        NavigationLink("Create New Account",
-                                       destination:RegisterView())
+                        NavigationLink(
+                            destination: RegisterView(),
+                            label: {
+                                Text("Create New Account")
+                            }
+                        )
+                        .accentColor(.red)
                         //                    show register
                         
                     
                     }
+                    
                 }
             }
         }
