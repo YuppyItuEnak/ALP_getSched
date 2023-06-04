@@ -15,7 +15,7 @@ struct TrackingView: View {
     @EnvironmentObject var activityViewModel: ActivityViewModel
     @State private var currentMonth: Date = Date()
     @State private var selectedActivities: [ActivityModel] = []
-    @State private var selectedDate: Date?
+    @State var selectedDate = Date()
 
     
     private let calendar = Calendar.current
@@ -33,77 +33,77 @@ struct TrackingView: View {
                 //Calendar
 
                 VStack {
-                    Text("Calendar")
-                        .font(.title)
-                        .padding()
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(.white)
-                            .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 2)
-
-                        VStack(spacing: 10) {
-                            HStack(spacing: 20){
-                                VStack(alignment: .leading, spacing:  10){
-                                    Text("\(currentMonth, formatter: yearFormatter)")
-                                        .font(.caption)
-                                        .fontWeight(.semibold)
-                                    
-                                    Text("\(currentMonth, formatter: monthFormatter)")
-                                        .font(.title.bold())
-                                }
-                                Spacer(minLength: 0)
+                                                    Text("Calendar")
+                                                        .font(.title)
+                                                        .padding()
+                                                    ZStack {
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .foregroundColor(.white)
+                                                            .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 2)
+                                                        
+                                                        DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+                                                            .padding(.horizontal)
+                                                            .datePickerStyle(.graphical)
+                                                            .background(
+                                                                
+                                                            )
+                                                        
+                                                        
+                                                    }
+                                                    .frame(maxWidth: .infinity)
+                                                    
+                                                    let dateString = activityViewModel.dateFormat(date: selectedDate)
+                                                    
+                                                    ForEach(activityViewModel.activities) { activity in
+                                                        if dateString == activity.date{
+                                                            ZStack {
+                                                                RoundedRectangle(cornerRadius: 10)
+                                                                    .foregroundColor(.white)
+                                                                    .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 2)
+                                                                
+                                                                HStack {
+                                                                    VStack {
+                                                                        HStack {
+                                                                            Text(activity.activityName)
+                                                                                .font(.title)
+                                                                            Spacer()
+                                                                            Image(systemName: activity.isComplete ? "checkmark.circle": "circle")
+                                                                                .foregroundColor(activity.isComplete ? .green: .red)
+                                                                        }
+                                                                        HStack{
+                                                                            Text(activity.description)
+                                                                                .font(.caption)
+                                                                                .foregroundColor(.secondary)
+                                                                            Spacer()
+                                                                            if activity.isCategoryProject == true && activity.isCategoryPersonal == false{
+                                                                                Text("Project")
+                                                                                    .font(.caption)
+                                                                                    .foregroundColor(.secondary)
+                                                                            }
+                                                                            if activity.isCategoryPersonal == true && activity.isCategoryProject == false{
+                                                                                Text("Personal")
+                                                                                    .font(.caption)
+                                                                                    .foregroundColor(.secondary)
+                                                                            }
+                                                                        }
+                                                                        HStack{
+                                                                            Text(activity.date)
+                                                                                .font(.caption2)
+                                                                                .foregroundColor(.secondary)
+                                                                            Text(activity.time)
+                                                                                .font(.caption2)
+                                                                                .foregroundColor(.secondary)
+                                                                            Spacer()
+                                                                        }
+                                                                    }
+                                                                }
+                                                                .padding()
+                                                            }
+                                                            .padding()
+                                                        }
+                                                    }
+                                                }
                                 
-                                Button{
-                                    withAnimation{
-                                        currentMonth = calendar.date(byAdding: .month, value: -1, to: currentMonth)!
-                                    }
-                                }label: {
-                                    Image(systemName: "chevron.left")
-                                        .font(.title2)
-                                }
-                                
-                                Button{
-                                    withAnimation{
-                                        currentMonth = calendar.date(byAdding: .month, value: 1, to: currentMonth)!
-                                    }
-                                }label: {
-                                    Image(systemName: "chevron.right")
-                                        .font(.title2)
-                                }
-                            }
-                            .padding(.horizontal)
-                            
-                            HStack {
-                                ForEach(daysOfWeek, id: \.self) { day in
-                                    Text(day)
-                                        .font(.caption)
-                                        .fontWeight(.semibold)
-                                        .frame(maxWidth: .infinity)
-                                }
-                            }
-                            .padding(.horizontal)
-                            
-                            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
-                                ForEach(daysInMonth, id: \.self) { day in
-                                    Text("\(day)")
-                                        .fontWeight(.bold)
-                                        .frame(width: 30, height: 30)
-                                        .background(
-                                            day == currentDay ? Color.blue : Color.clear)
-                                        .clipShape(Circle())
-                                        .onTapGesture {
-                                            let selectedDateComponents = calendar.dateComponents([.year, .month], from: currentMonth)
-                                            selectedDate = calendar.date(bySetting: .day, value: day, of: calendar.date(from: selectedDateComponents)!)
-
-                                        }
-                                }
-                            }
-                            .padding()
-                        }
-                        .padding()
-                    }
-                    .padding()
-                }
                 
                 
                 

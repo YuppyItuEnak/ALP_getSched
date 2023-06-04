@@ -24,19 +24,33 @@ struct ActivityListView: View {
                     Text("There is no Activity")
                 }else{
                     List{
-                        ForEach(activityViewModel.activities){ activity in
-                            if activity.date != activityViewModel.dateFormat(date: currentDate) {
-                                Section(header: Text("Activity Lainnya")){
-                                    ActivityListCard(activity: activity)
-                                }
-                            } else {
-                                Section(header: Text("Activities untuk \(activity.date)")) {
-                                    ActivityListCard(activity: activity)
-                                }
-                            }
-                        }
-                        .onDelete(perform: activityViewModel.deleteItem)
-                    }
+                                           Section(header: Text("Activity for \(activityViewModel.dateFormat(date: currentDate))")){
+                                               ForEach(activityViewModel.activities){ activity in
+                                                   if activity.date == activityViewModel.dateFormat(date: currentDate) {
+                                                           ActivityListCard(activity: activity)
+                                                   }
+                                               }
+                                               .onDelete(perform: activityViewModel.deleteItem)
+                                           }
+                                           
+                                           if let otherActivity = activityViewModel.activities.filter({$0.date != activityViewModel.dateFormat(date: currentDate)}) as [ActivityModel]?{
+                                               if otherActivity.isEmpty{
+                                                   Section(header: Text("Other Activity")){
+                                                       Text("There are no activity")
+                                                           .font(.callout)
+                                                           .foregroundColor(.secondary)
+                                                   }
+                                               }else{
+                                                   Section(header: Text("Other Activities")) {
+                                                       ForEach(activityViewModel.activities){ activity in
+                                                           ActivityListCard(activity: activity)
+                                                       }
+                                                   }
+                                               }
+                                               
+                                           }
+                                       }
+                                   
                 }
             }
             .listStyle(PlainListStyle())
