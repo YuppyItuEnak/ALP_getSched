@@ -16,6 +16,7 @@ struct LoginView: View {
             VStack{
                 //            Header
                 HeaderView(title:"GET SCHED", subtitle: "Streamline Your Task", angle: 15, background: .blue)
+                   
                 
                 
                 //            Login Form
@@ -36,7 +37,11 @@ struct LoginView: View {
                                 .foregroundColor(Color.white)
                                 .bold()
                         }
+                        
+
                     }
+                    .padding()
+                    Spacer()
                 }
                 //            Create account
                 VStack{
@@ -49,7 +54,7 @@ struct LoginView: View {
                 }
                 Spacer()
             }
-//            .padding(.bottom, 50)
+            .padding(.bottom)
             
             
         }
