@@ -14,7 +14,7 @@ struct ALP_getSchedApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-               SplashScreen()
+               MainView()
                     .environmentObject(activityViewModel)
             }
         }

@@ -16,16 +16,20 @@ struct RegisterView: View {
         VStack{
             //            Header
             
-            HeaderView(title: "Register", subtitle: "Start Organizing Now", angle: 15, background: .cyan)
+            HeaderView(title: "Register", subtitle: "Start Organizing Now", angle: 15, background: .blue
+            )
             
             Form{
                 TextField("Full name", text: $name)
                     .textFieldStyle(DefaultTextFieldStyle())
+                    .autocorrectionDisabled()
                 
                 TextField("Email", text: $email)
                     .textFieldStyle(DefaultTextFieldStyle())
+                    .autocorrectionDisabled()
                 SecureField("Password", text: $password)
                     .textFieldStyle(DefaultTextFieldStyle())
+                    .autocorrectionDisabled()
                 
                 Button{
                     //                attemp login
