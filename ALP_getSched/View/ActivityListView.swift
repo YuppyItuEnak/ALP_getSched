@@ -45,6 +45,7 @@ struct ActivityListView: View {
                                                        ForEach(activityViewModel.activities){ activity in
                                                            ActivityListCard(activity: activity)
                                                        }
+                                                       .onDelete(perform: activityViewModel.deleteItem)
                                                    }
                                                }
                                                

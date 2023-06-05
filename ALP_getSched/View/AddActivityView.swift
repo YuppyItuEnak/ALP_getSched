@@ -8,37 +8,119 @@
 import SwiftUI
 import UserNotifications
 
-class NotificationManager{
+//class notifUhuy{
+//    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+//        if granted {
+//            // Authorization granted, you can schedule the notification
+//            scheduleNotification()
+//        } else {
+//            // Authorization denied
+//        }
+//    }
+//
+//    func scheduleNotification() {
+//        // Create a notification content
+//        let content = UNMutableNotificationContent()
+//        content.title = "Notification Title"
+//        content.body = "This is the body of the notification."
+//        content.sound = UNNotificationSound.default
+//
+//        // Create a trigger for the notification (e.g., schedule it after 5 seconds)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//
+//        // Create a unique identifier for the notification
+//        let identifier = "NotificationIdentifier"
+//
+//        // Create a notification request
+//        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+//
+//        // Schedule the notification
+//        UserNotifications.UNUserNotificationCenter.current().add(request) { error in
+//            if let error = error {
+//                print("Error scheduling notification: \(error.localizedDescription)")
+//            } else {
+//                print("Notification scheduled successfully.")
+//            }
+//        }
+//    }
+//}
+
+class NotificationManager {
     static let instance = NotificationManager()
     
+    // For Authorization
     func requestAuthorization(){
         let option : UNAuthorizationOptions = [.alert, .sound, .badge]
         
         UNUserNotificationCenter.current().requestAuthorization(options: option) { success, error in
-            if let error = error{
-                print("ERROR: \(error)")
-            }else{
+            if success {
                 print("SUCCESS")
+                //                self.scheduleNotification(activityName: activityName, inputDate: inputDate, inputTime: inputTime)
+            } else if let error = error {
+                print("ERROR: \(error)")
             }
         }
     }
     
-    func scheduleNotification(activatyName: String, dateTime: Date){
-        let content = UNMutableNotificationContent()
-        content.title = "REMINDER"
-        content.subtitle = activatyName
-        content.sound = .default
+    // function untuk memformat waktu
+    func timeFormat(time: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm a"
+        let timeString = dateFormatter.string(from: time)
         
+        return timeString
+    }
+    
+    // function untuk memformat tanggal
+    func dateFormat(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        let dateString = dateFormatter.string(from: date)
         
+        return dateString
+    }
+    
+    func scheduleNotification(activityName: String, inputDate: Date, inputTime: Date){
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: dateTime), repeats: false)
-
+        let userDate = dateFormat(date: inputDate)
+        let userTime = timeFormat(time: inputTime)
         
-        let request = UNNotificationRequest(identifier: "SUCCESS", content: content, trigger: trigger)
+        print("Pentol")
+        print("Tanggal: \(userDate), Waktu: \(userTime)")
         
-        UNUserNotificationCenter.current().add(request)
+        // Create a Date object from the user-inputted date and time
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy HH:mm a" // Adjust the format according to your input
+        dateFormatter.locale = Locale(identifier: "id_ID")
+//        dateFormatter.timeZone = TimeZone(identifier: "Asia/Bangkok")
+        let date = dateFormatter.date(from: "\(userDate) \(userTime)")
+        
+        if let selectedDate = date {
+            let content = UNMutableNotificationContent()
+            content.title = "REMINDER"
+            content.subtitle = activityName
+            content.sound = .default
+            
+            print("tau gaksih: \(selectedDate)")
+            let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: selectedDate), repeats: false)
+            
+            let identifier = "NotificationIdentifier"
+            
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Error scheduling notification: \(error.localizedDescription)")
+                } else {
+                    print("Notification scheduled successfully.")
+                }
+            }
+        } else {
+            print("Invalid date or time format.")
+        }
     }
 }
+
 
 struct AddActivityView: View {
     @EnvironmentObject var activityViewModel: ActivityViewModel
@@ -54,7 +136,6 @@ struct AddActivityView: View {
     @State private var isValid: Bool = false
     
     var body: some View {
-        
         ScrollView{
             VStack {
                 Section(header: Text("Activity Form")){
@@ -81,8 +162,8 @@ struct AddActivityView: View {
                 if activityName != "" {
                     Button("Save".uppercased()){
                         NotificationManager.instance.requestAuthorization()
-                        NotificationManager.instance.scheduleNotification(activatyName: activityName, dateTime: dateTime)
                         activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
+                        NotificationManager.instance.scheduleNotification(activityName: activityName, inputDate: dateTime, inputTime: time)
                         isValid = true
                         dismiss()
                     }
@@ -127,3 +208,4 @@ struct AddActivityView_Previews: PreviewProvider {
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
