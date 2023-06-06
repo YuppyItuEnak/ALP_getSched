@@ -18,7 +18,7 @@ struct SplashScreen: View {
             }else{
                 Rectangle()
                     .background(Color.blue)
-                Image("AppIcon")
+                Image("For AppIcon")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 300)

@@ -131,9 +131,11 @@ struct AddActivityView: View {
     @State var dateTime = Date()
     @State var time = Date()
     @State var isComplete: Bool = false
-    @State var isCategoryPersonal: Bool = true
+    @State var isCategoryPersonal: Bool = false
     @State var isCategoryProject: Bool = false
     @State private var isValid: Bool = false
+    @State var isCategory = ["Category","Personal", "Project"]
+    @State var selectedCategory: String = ""
     
     var body: some View {
         ScrollView{
@@ -153,16 +155,22 @@ struct AddActivityView: View {
                     DatePicker("Time:", selection: $time, displayedComponents: [.hourAndMinute])
                         .padding(.bottom)
                     //Untuk set kategori apakah kategori ini personal atau project
-                    Toggle("Personal", isOn: $isCategoryPersonal)
-                        .padding(.bottom)
-                    Toggle("Project", isOn: $isCategoryProject)
-                        .padding(.bottom)
+                    HStack {
+                        Text("Category: ")
+                        Spacer()
+                        Picker(selection: $selectedCategory, label: Text("Options")) {
+                            ForEach(isCategory, id: \.self) { option in
+                                Text(option)
+                            }
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                    }
                 }
                 
                 if activityName != "" {
                     Button("Save".uppercased()){
                         NotificationManager.instance.requestAuthorization()
-                        activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
+                        activityViewModel.addItem(activityName: activityName, description: description, date: dateTime, time: time, isComplete: isComplete, isCategory: selectedCategory)
                         NotificationManager.instance.scheduleNotification(activityName: activityName, inputDate: dateTime, inputTime: time)
                         isValid = true
                         dismiss()
@@ -179,7 +187,7 @@ struct AddActivityView: View {
                 } else {
                     Button(action: {
                         if activityName == "" {
-                            isValid = true
+                            isValid = false
                         }
                     }, label: {
                         Text("Save".uppercased())
@@ -204,6 +212,7 @@ struct AddActivityView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             AddActivityView()
+                .environmentObject(ActivityViewModel())
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
