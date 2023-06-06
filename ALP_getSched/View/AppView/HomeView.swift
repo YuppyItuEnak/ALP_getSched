@@ -20,8 +20,10 @@ extension Color {
 
 //navigasi view
 struct HomeView: View {
+    @EnvironmentObject var viewModel: ActivityViewModel
     var body: some View {
         
+        NavigationStack {
             TabView{
                 ActivityListView()
                     .tabItem{
@@ -39,10 +41,27 @@ struct HomeView: View {
                         Label("Profile", systemImage: "person.2.badge.gearshape")
                     }
             }
+//            .overlay(alignment: .topTrailing, content: {
+//                NavigationLink(destination: AddActivityView()) {
+//                    Image(systemName: "plus")
+//                        .foregroundColor(.white)
+//                        .fontWeight(.bold)
+//                        .padding(.all,20)
+//                        .foregroundColor(.blue)
+//                        .background(LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .leading, endPoint: .trailing))
+//                        .cornerRadius(50)
+//
+//                }
+//                .padding()
+//            })
+            
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
         HomeView()
             .environmentObject(ActivityViewModel())

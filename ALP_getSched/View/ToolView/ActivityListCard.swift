@@ -25,12 +25,12 @@ struct ActivityListCard: View {
                         .font(.caption)
                         .foregroundColor(.secondary)
                     Spacer()
-                    if activity.isCategoryProject == true && activity.isCategoryPersonal == false{
+                    if activity.isCategory == "Project"{
                         Text("Project")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
-                    if activity.isCategoryPersonal == true && activity.isCategoryProject == false{
+                    if activity.isCategory == "Personal"{
                         Text("Personal")
                             .font(.caption)
                             .foregroundColor(.secondary)
@@ -52,9 +52,9 @@ struct ActivityListCard: View {
 }
 
 struct ActivityListCard_Previews: PreviewProvider {
-    static var activity1 = ActivityModel(activityName: "First Item", description: "First Description", date: "May 15, 2023", time: "12:00 AM", isComplete: false, isCategoryProject: false, isCategoryPersonal: false)
+    static var activity1 = ActivityModel(activityName: "First Item", description: "First Description", date: "May 15, 2023", time: "12:00 AM", isComplete: false, isCategory: "Personal")
     
-    static var activity2 = ActivityModel(activityName: "Second Item", description: "Second Description", date: "June 20, 2023", time: "10:00 PM", isComplete: true, isCategoryProject: false, isCategoryPersonal: false)
+    static var activity2 = ActivityModel(activityName: "Second Item", description: "Second Description", date: "June 20, 2023", time: "10:00 PM", isComplete: true, isCategory: "Project")
     
     
     static var previews: some View {

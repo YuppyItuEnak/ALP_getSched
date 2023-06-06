@@ -38,14 +38,20 @@ class ActivityViewModel: ObservableObject {
     }
     
     // function untuk menambah activity
-    func addItem(activityName: String, description: String, date: Date, time: Date, isComplete: Bool, isCategoryProject: Bool, isCategoryPersonal: Bool) {
+    func addItem(activityName: String, description: String, date: Date, time: Date, isComplete: Bool, isCategory: String) {
         let forSavingDate = dateFormat(date: date)
         let forSavingTime = timeFormat(time: time)
-        let newItem = ActivityModel(activityName: activityName, description: description, date: forSavingDate, time: forSavingTime, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
+        let newItem = ActivityModel(activityName: activityName, description: description, date: forSavingDate, time: forSavingTime, isComplete: isComplete, isCategory: isCategory)
         activities.append(newItem)
         
         scheduleNotification(for: newItem)
         
+    }
+    
+    func updateItem(item: ActivityModel){
+        if let index = activities.firstIndex(where: {$0.id == item.id}){
+            activities[index] = item.updateCompletion()
+        }
     }
     
     func saveItems(){
@@ -106,6 +112,41 @@ class ActivityViewModel: ObservableObject {
                 }
             }
         }
+    //nge count activity per bulan dan menampilkan bulan dengan format MMMM
+    func aggregateActivityCounts() -> [(String, Double)] {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: currentDate)
+        
+        // Create an array of tuples representing each month with an initial count of 0
+        var activityCounts: [(String, Double)] = []
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        for month in 1...12 {
+            let monthName = dateFormatter.monthSymbols[month - 1]
+            activityCounts.append((monthName, 0))
+        }
+        
+        for activity in activities {
+            let activityDate = activity.date
+            dateFormatter.dateFormat = "MMMM dd, yyyy"
+            if let date = dateFormatter.date(from: activityDate) {
+                let activityYear = calendar.component(.year, from: date)
+                
+                if activityYear == year {
+                    let month = calendar.component(.month, from: date)
+                    let count = activityCounts.first(where: { $0.0 == dateFormatter.monthSymbols[month - 1] })?.1 ?? 0
+                    if let index = activityCounts.firstIndex(where: { $0.0 == dateFormatter.monthSymbols[month - 1] }) {
+                        activityCounts[index] = (dateFormatter.monthSymbols[month - 1], count + 1)
+                    } else {
+                        activityCounts.append((dateFormatter.monthSymbols[month - 1], count + 1))
+                    }
+                }
+            }
+        }
+        
+        return activityCounts.sorted { dateFormatter.monthSymbols.firstIndex(of: $0.0)! < dateFormatter.monthSymbols.firstIndex(of: $1.0)! }
+    }
     
    
 }

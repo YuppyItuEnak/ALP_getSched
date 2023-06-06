@@ -14,19 +14,21 @@ struct ActivityModel: Identifiable, Codable{
     var date: String
     var time: String
     var isComplete: Bool
-    var isCategoryProject: Bool
-    var isCategoryPersonal: Bool
+    var isCategory: String
     
     
-    init(id: String = UUID().uuidString, activityName: String, description: String, date: String, time: String, isComplete: Bool, isCategoryProject: Bool, isCategoryPersonal: Bool) {
+    init(id: String = UUID().uuidString, activityName: String, description: String, date: String, time: String, isComplete: Bool, isCategory: String) {
         self.id = id
         self.activityName = activityName
         self.description = description
         self.date = date
         self.time = time
         self.isComplete = isComplete
-        self.isCategoryProject = isCategoryProject
-        self.isCategoryPersonal = isCategoryPersonal
+        self.isCategory = isCategory
+    }
+    
+    func updateCompletion() -> ActivityModel{
+        return ActivityModel(id: id,activityName: activityName, description: description, date: date, time: time, isComplete: !isComplete, isCategory: isCategory)
     }
 }
 
