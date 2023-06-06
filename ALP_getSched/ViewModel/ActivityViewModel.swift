@@ -7,20 +7,24 @@
 
 import Foundation
 import UserNotifications
+import WatchConnectivity
 
 class ActivityViewModel: ObservableObject {
+
     // variable yang bisa digunakan di semua class dan menampung isi dari model
     @Published var activities: [ActivityModel] = []{
         didSet {
             saveItems()
         }
     }
+    
     let activityKey: String = "activities_list"
     @Published var selectedDateActivities: [ActivityModel] = []
     
     init() {
         getActivities()
     }
+    
     
     // function yang berisikan variable newItems sebagai dummydata untuk menyimpan activity
     func getActivities() {
@@ -44,13 +48,17 @@ class ActivityViewModel: ObservableObject {
         let newItem = ActivityModel(activityName: activityName, description: description, date: forSavingDate, time: forSavingTime, isComplete: isComplete, isCategoryProject: isCategoryProject, isCategoryPersonal: isCategoryPersonal)
         activities.append(newItem)
         
-        scheduleNotification(for: newItem)
+//        scheduleNotification(for: newItem)
         
     }
     
     func saveItems(){
         if let encodedData = try? JSONEncoder().encode(activities){
             UserDefaults.standard.set(encodedData, forKey: activityKey)
+            
+            // Update data on Apple Watch
+            let data = ["activities": activities]
+            WCSession.default.sendMessage(data, replyHandler: nil, errorHandler: nil)
         }
     }
     
@@ -80,32 +88,6 @@ class ActivityViewModel: ObservableObject {
         
         selectedDateActivities = activities.filter { $0.date == selectedDateString }
     }
-
-    private func scheduleNotification(for activity: ActivityModel) {
-            let center = UNUserNotificationCenter.current()
-            center.getNotificationSettings { settings in
-                if settings.authorizationStatus == .authorized {
-                    let content = UNMutableNotificationContent()
-                    content.title = "Reminder"
-                    content.body = "Activity: \(activity.activityName)"
-                    content.sound = UNNotificationSound.default
-                    
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
-                    let dateString = "\(activity.date) \(activity.time)"
-                    if let triggerDate = dateFormatter.date(from: dateString) {
-                        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: triggerDate), repeats: false)
-                        let request = UNNotificationRequest(identifier: activity.id, content: content, trigger: trigger)
-                        
-                        center.add(request) { error in
-                            if let error = error {
-                                print("Error scheduling notification for \(activity.activityName): \(error.localizedDescription)")
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    
-   
 }
+
+

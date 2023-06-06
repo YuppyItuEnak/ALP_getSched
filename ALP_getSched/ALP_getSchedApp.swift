@@ -14,8 +14,13 @@ struct ALP_getSchedApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-               HomeView()
+                #if os(iOS)
+                HomeView()
                     .environmentObject(activityViewModel)
+                #elseif os(watchOS)
+                ActivityListView()
+                    .environmentObject(activityViewModel)
+                #endif
             }
         }
     }

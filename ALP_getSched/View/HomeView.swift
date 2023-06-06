@@ -21,7 +21,6 @@ extension Color {
 //navigasi view
 struct HomeView: View {
     var body: some View {
-        
             TabView{
                 ActivityListView()
                     .tabItem{
@@ -33,7 +32,6 @@ struct HomeView: View {
                         Label("Graph", systemImage: "chart.dots.scatter")
                         
                     }
-                
                 ProfileView()
                     .tabItem{
                         Label("Profile", systemImage: "person.2.badge.gearshape")
