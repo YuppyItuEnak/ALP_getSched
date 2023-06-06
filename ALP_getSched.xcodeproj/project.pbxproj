@@ -34,6 +34,7 @@
 		047533272A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533262A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift */; };
 		0475336A2A2F5197003C0F49 /* HeaderViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533692A2F5197003C0F49 /* HeaderViewMac.swift */; };
 		0475336C2A2F7097003C0F49 /* SplashScreenMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475336B2A2F7097003C0F49 /* SplashScreenMac.swift */; };
+		0475336E2A2F721B003C0F49 /* RegisterViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475336D2A2F721B003C0F49 /* RegisterViewMac.swift */; };
 		04B2915D2A2CAEB500EA8703 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2915C2A2CAEB500EA8703 /* LocalNotification.swift */; };
 		04B2915F2A2CD7C500EA8703 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2915E2A2CD7C500EA8703 /* SplashScreen.swift */; };
 		04F7C8162A2A185B0055D224 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F7C8152A2A185B0055D224 /* LoginView.swift */; };
@@ -123,6 +124,7 @@
 		047533262A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_getSchedMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		047533692A2F5197003C0F49 /* HeaderViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewMac.swift; sourceTree = "<group>"; };
 		0475336B2A2F7097003C0F49 /* SplashScreenMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenMac.swift; sourceTree = "<group>"; };
+		0475336D2A2F721B003C0F49 /* RegisterViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewMac.swift; sourceTree = "<group>"; };
 		04B2915C2A2CAEB500EA8703 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		04B2915E2A2CD7C500EA8703 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		04F7C8152A2A185B0055D224 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			children = (
 				047533692A2F5197003C0F49 /* HeaderViewMac.swift */,
 				0475336B2A2F7097003C0F49 /* SplashScreenMac.swift */,
+				0475336D2A2F721B003C0F49 /* RegisterViewMac.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				0475336C2A2F7097003C0F49 /* SplashScreenMac.swift in Sources */,
 				0475330B2A2E703F003C0F49 /* ContentView.swift in Sources */,
 				047533092A2E703F003C0F49 /* ALP_getSchedMacApp.swift in Sources */,
+				0475336E2A2F721B003C0F49 /* RegisterViewMac.swift in Sources */,
 				0475336A2A2F5197003C0F49 /* HeaderViewMac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

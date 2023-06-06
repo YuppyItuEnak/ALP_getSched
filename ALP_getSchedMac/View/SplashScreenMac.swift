@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct SplashScreen: View {
+struct SplashScreenMac: View {
     
     @State private var isActive: Bool = false
     
     var body: some View {
         ZStack {
             if self.isActive{
-                //HomeView()
-            }else{
+               // HomeView()
+            } else {
                 Rectangle()
-                    .background(Color.blue)
+                    .fill(Color.blue)
                 Image("AppIcon")
                     .resizable()
                     .scaledToFit()
@@ -34,8 +34,8 @@ struct SplashScreen: View {
     }
 }
 
-struct SplashScreen_Previews: PreviewProvider {
+struct SplashScreenMac_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen()
+        SplashScreenMac()
     }
 }
