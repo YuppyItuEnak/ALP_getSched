@@ -7,14 +7,35 @@
 
 import SwiftUI
 
-struct SplashScreenMac: View {
+struct SplashScreen: View {
+    
+    @State private var isActive: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            if self.isActive{
+                //HomeView()
+            }else{
+                Rectangle()
+                    .background(Color.blue)
+                Image("AppIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300, height: 300)
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
+        }
     }
 }
 
-struct SplashScreenMac_Previews: PreviewProvider {
+struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreenMac()
+        SplashScreen()
     }
 }
