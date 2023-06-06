@@ -16,7 +16,8 @@ struct RegisterViewMac: View {
     var body: some View {
         VStack {
             // Header
-            HeaderView(title: "Register", subtitle: "Start Organizing Now", angle: 15, background: .blue)
+            HeaderView(title: "Register", subtitle: "Start Organizing Now", angle: 0, background: .blue)
+                .padding(.top,200)
             
             Form {
                 TextField("Full name", text: $name)
