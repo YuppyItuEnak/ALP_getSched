@@ -1,8 +1,8 @@
 //
 //  ActivityListView.swift
-//  ALP_getSched
+//  ALP_getSchedMac
 //
-//  Created by MacBook Pro on 15/05/23.
+//  Created by MacBook Pro on 06/06/23.
 //
 
 import SwiftUI

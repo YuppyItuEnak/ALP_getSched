@@ -6,8 +6,57 @@
 	<dict>
 		<key>ALP_getSched.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>ALP_getSchedMac.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>mactest1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>045BEB9C2A09EFE3002C5DAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>045BEBAC2A09EFE4002C5DAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>045BEBB62A09EFE4002C5DAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>047533052A2E703F003C0F49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>047533152A2E7041003C0F49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0475331F2A2E7041003C0F49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

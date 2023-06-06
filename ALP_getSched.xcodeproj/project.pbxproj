@@ -25,6 +25,25 @@
 		045BEC272A1220ED002C5DAE /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEC262A1220ED002C5DAE /* AddActivityView.swift */; };
 		045BEC362A209912002C5DAE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEC352A209912002C5DAE /* HomeView.swift */; };
 		045BEC392A20A17A002C5DAE /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 045BEC382A20A17A002C5DAE /* SwiftUICharts */; };
+		047533092A2E703F003C0F49 /* ALP_getSchedMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533082A2E703F003C0F49 /* ALP_getSchedMacApp.swift */; };
+		0475330B2A2E703F003C0F49 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475330A2A2E703F003C0F49 /* ContentView.swift */; };
+		0475330D2A2E7040003C0F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0475330C2A2E7040003C0F49 /* Assets.xcassets */; };
+		047533102A2E7040003C0F49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0475330F2A2E7040003C0F49 /* Preview Assets.xcassets */; };
+		0475331B2A2E7041003C0F49 /* ALP_getSchedMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475331A2A2E7041003C0F49 /* ALP_getSchedMacTests.swift */; };
+		047533252A2E7041003C0F49 /* ALP_getSchedMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533242A2E7041003C0F49 /* ALP_getSchedMacUITests.swift */; };
+		047533272A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533262A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift */; };
+		047533512A2E7D0E003C0F49 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533502A2E7D0E003C0F49 /* ActivityModel.swift */; };
+		047533532A2E7E00003C0F49 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533522A2E7E00003C0F49 /* ProfileModel.swift */; };
+		047533552A2E7EA8003C0F49 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533542A2E7EA8003C0F49 /* LoginViewModel.swift */; };
+		047533592A2E7EDB003C0F49 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533582A2E7EDB003C0F49 /* RegisterViewModel.swift */; };
+		0475335B2A2E7FA2003C0F49 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475335A2A2E7FA2003C0F49 /* ActivityViewModel.swift */; };
+		0475335D2A2E816F003C0F49 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475335C2A2E816F003C0F49 /* ProfileViewModel.swift */; };
+		0475335F2A2E85F9003C0F49 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475335E2A2E85F9003C0F49 /* HeaderView.swift */; };
+		047533602A2E8A25003C0F49 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEC262A1220ED002C5DAE /* AddActivityView.swift */; };
+		047533622A2E98E3003C0F49 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533612A2E98E3003C0F49 /* ActivityListView.swift */; };
+		047533642A2E9A6B003C0F49 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533632A2E9A6B003C0F49 /* AddActivityView.swift */; };
+		047533662A2E9A92003C0F49 /* ActivityListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533652A2E9A92003C0F49 /* ActivityListCard.swift */; };
+		047533682A2EA53D003C0F49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533672A2EA53D003C0F49 /* HomeView.swift */; };
 		04B2915D2A2CAEB500EA8703 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2915C2A2CAEB500EA8703 /* LocalNotification.swift */; };
 		04B2915F2A2CD7C500EA8703 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2915E2A2CD7C500EA8703 /* SplashScreen.swift */; };
 		04F7C8162A2A185B0055D224 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F7C8152A2A185B0055D224 /* LoginView.swift */; };
@@ -50,7 +69,34 @@
 			remoteGlobalIDString = 045BEB9C2A09EFE3002C5DAE;
 			remoteInfo = ALP_getSched;
 		};
+		047533172A2E7041003C0F49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 045BEB952A09EFE3002C5DAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 047533052A2E703F003C0F49;
+			remoteInfo = ALP_getSchedMac;
+		};
+		047533212A2E7041003C0F49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 045BEB952A09EFE3002C5DAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 047533052A2E703F003C0F49;
+			remoteInfo = ALP_getSchedMac;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		047533012A2E6FEC003C0F49 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		042D3EEF2A1C4C71009CFEB7 /* EditActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityView.swift; sourceTree = "<group>"; };
@@ -73,6 +119,29 @@
 		045BEC242A121960002C5DAE /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		045BEC262A1220ED002C5DAE /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		045BEC352A209912002C5DAE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		047532EA2A2E6C67003C0F49 /* ALP_getSched.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ALP_getSched.entitlements; sourceTree = "<group>"; };
+		047533062A2E703F003C0F49 /* ALP_getSchedMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALP_getSchedMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		047533082A2E703F003C0F49 /* ALP_getSchedMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_getSchedMacApp.swift; sourceTree = "<group>"; };
+		0475330A2A2E703F003C0F49 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0475330C2A2E7040003C0F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0475330F2A2E7040003C0F49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		047533112A2E7040003C0F49 /* ALP_getSchedMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ALP_getSchedMac.entitlements; sourceTree = "<group>"; };
+		047533162A2E7041003C0F49 /* ALP_getSchedMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALP_getSchedMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0475331A2A2E7041003C0F49 /* ALP_getSchedMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_getSchedMacTests.swift; sourceTree = "<group>"; };
+		047533202A2E7041003C0F49 /* ALP_getSchedMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALP_getSchedMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		047533242A2E7041003C0F49 /* ALP_getSchedMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_getSchedMacUITests.swift; sourceTree = "<group>"; };
+		047533262A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_getSchedMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		047533502A2E7D0E003C0F49 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		047533522A2E7E00003C0F49 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		047533542A2E7EA8003C0F49 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		047533582A2E7EDB003C0F49 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		0475335A2A2E7FA2003C0F49 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		0475335C2A2E816F003C0F49 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		0475335E2A2E85F9003C0F49 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		047533612A2E98E3003C0F49 /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
+		047533632A2E9A6B003C0F49 /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
+		047533652A2E9A92003C0F49 /* ActivityListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListCard.swift; sourceTree = "<group>"; };
+		047533672A2EA53D003C0F49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		04B2915C2A2CAEB500EA8703 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		04B2915E2A2CD7C500EA8703 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		04F7C8152A2A185B0055D224 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -106,6 +175,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		047533032A2E703F003C0F49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047533132A2E7041003C0F49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0475331D2A2E7041003C0F49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +205,9 @@
 				045BEB9F2A09EFE3002C5DAE /* ALP_getSched */,
 				045BEBB02A09EFE4002C5DAE /* ALP_getSchedTests */,
 				045BEBBA2A09EFE4002C5DAE /* ALP_getSchedUITests */,
+				047533072A2E703F003C0F49 /* ALP_getSchedMac */,
+				047533192A2E7041003C0F49 /* ALP_getSchedMacTests */,
+				047533232A2E7041003C0F49 /* ALP_getSchedMacUITests */,
 				045BEB9E2A09EFE3002C5DAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +218,9 @@
 				045BEB9D2A09EFE3002C5DAE /* ALP_getSched.app */,
 				045BEBAD2A09EFE4002C5DAE /* ALP_getSchedTests.xctest */,
 				045BEBB72A09EFE4002C5DAE /* ALP_getSchedUITests.xctest */,
+				047533062A2E703F003C0F49 /* ALP_getSchedMac.app */,
+				047533162A2E7041003C0F49 /* ALP_getSchedMacTests.xctest */,
+				047533202A2E7041003C0F49 /* ALP_getSchedMacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +228,7 @@
 		045BEB9F2A09EFE3002C5DAE /* ALP_getSched */ = {
 			isa = PBXGroup;
 			children = (
+				047532EA2A2E6C67003C0F49 /* ALP_getSched.entitlements */,
 				045BEC1D2A1205FE002C5DAE /* ViewModel */,
 				045BEC1C2A1205F7002C5DAE /* Model */,
 				045BEC1B2A1205F1002C5DAE /* View */,
@@ -207,6 +304,78 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		047533072A2E703F003C0F49 /* ALP_getSchedMac */ = {
+			isa = PBXGroup;
+			children = (
+				047533492A2E78CC003C0F49 /* ViewModel */,
+				047533482A2E78C6003C0F49 /* Model */,
+				047533472A2E78BD003C0F49 /* View */,
+				047533082A2E703F003C0F49 /* ALP_getSchedMacApp.swift */,
+				0475330A2A2E703F003C0F49 /* ContentView.swift */,
+				0475330C2A2E7040003C0F49 /* Assets.xcassets */,
+				047533112A2E7040003C0F49 /* ALP_getSchedMac.entitlements */,
+				0475330E2A2E7040003C0F49 /* Preview Content */,
+			);
+			path = ALP_getSchedMac;
+			sourceTree = "<group>";
+		};
+		0475330E2A2E7040003C0F49 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0475330F2A2E7040003C0F49 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		047533192A2E7041003C0F49 /* ALP_getSchedMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				0475331A2A2E7041003C0F49 /* ALP_getSchedMacTests.swift */,
+			);
+			path = ALP_getSchedMacTests;
+			sourceTree = "<group>";
+		};
+		047533232A2E7041003C0F49 /* ALP_getSchedMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				047533242A2E7041003C0F49 /* ALP_getSchedMacUITests.swift */,
+				047533262A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift */,
+			);
+			path = ALP_getSchedMacUITests;
+			sourceTree = "<group>";
+		};
+		047533472A2E78BD003C0F49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0475335E2A2E85F9003C0F49 /* HeaderView.swift */,
+				047533612A2E98E3003C0F49 /* ActivityListView.swift */,
+				047533632A2E9A6B003C0F49 /* AddActivityView.swift */,
+				047533652A2E9A92003C0F49 /* ActivityListCard.swift */,
+				047533672A2EA53D003C0F49 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		047533482A2E78C6003C0F49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				047533502A2E7D0E003C0F49 /* ActivityModel.swift */,
+				047533522A2E7E00003C0F49 /* ProfileModel.swift */,
+				047533542A2E7EA8003C0F49 /* LoginViewModel.swift */,
+				047533582A2E7EDB003C0F49 /* RegisterViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		047533492A2E78CC003C0F49 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0475335A2A2E7FA2003C0F49 /* ActivityViewModel.swift */,
+				0475335C2A2E816F003C0F49 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,6 +386,7 @@
 				045BEB992A09EFE3002C5DAE /* Sources */,
 				045BEB9A2A09EFE3002C5DAE /* Frameworks */,
 				045BEB9B2A09EFE3002C5DAE /* Resources */,
+				047533012A2E6FEC003C0F49 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
@@ -266,6 +436,59 @@
 			productReference = 045BEBB72A09EFE4002C5DAE /* ALP_getSchedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		047533052A2E703F003C0F49 /* ALP_getSchedMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047533282A2E7041003C0F49 /* Build configuration list for PBXNativeTarget "ALP_getSchedMac" */;
+			buildPhases = (
+				047533022A2E703F003C0F49 /* Sources */,
+				047533032A2E703F003C0F49 /* Frameworks */,
+				047533042A2E703F003C0F49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ALP_getSchedMac;
+			productName = ALP_getSchedMac;
+			productReference = 047533062A2E703F003C0F49 /* ALP_getSchedMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		047533152A2E7041003C0F49 /* ALP_getSchedMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0475332B2A2E7041003C0F49 /* Build configuration list for PBXNativeTarget "ALP_getSchedMacTests" */;
+			buildPhases = (
+				047533122A2E7041003C0F49 /* Sources */,
+				047533132A2E7041003C0F49 /* Frameworks */,
+				047533142A2E7041003C0F49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				047533182A2E7041003C0F49 /* PBXTargetDependency */,
+			);
+			name = ALP_getSchedMacTests;
+			productName = ALP_getSchedMacTests;
+			productReference = 047533162A2E7041003C0F49 /* ALP_getSchedMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0475331F2A2E7041003C0F49 /* ALP_getSchedMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0475332E2A2E7041003C0F49 /* Build configuration list for PBXNativeTarget "ALP_getSchedMacUITests" */;
+			buildPhases = (
+				0475331C2A2E7041003C0F49 /* Sources */,
+				0475331D2A2E7041003C0F49 /* Frameworks */,
+				0475331E2A2E7041003C0F49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				047533222A2E7041003C0F49 /* PBXTargetDependency */,
+			);
+			name = ALP_getSchedMacUITests;
+			productName = ALP_getSchedMacUITests;
+			productReference = 047533202A2E7041003C0F49 /* ALP_getSchedMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -286,6 +509,17 @@
 					045BEBB62A09EFE4002C5DAE = {
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 045BEB9C2A09EFE3002C5DAE;
+					};
+					047533052A2E703F003C0F49 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					047533152A2E7041003C0F49 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 047533052A2E703F003C0F49;
+					};
+					0475331F2A2E7041003C0F49 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 047533052A2E703F003C0F49;
 					};
 				};
 			};
@@ -308,6 +542,9 @@
 				045BEB9C2A09EFE3002C5DAE /* ALP_getSched */,
 				045BEBAC2A09EFE4002C5DAE /* ALP_getSchedTests */,
 				045BEBB62A09EFE4002C5DAE /* ALP_getSchedUITests */,
+				047533052A2E703F003C0F49 /* ALP_getSchedMac */,
+				047533152A2E7041003C0F49 /* ALP_getSchedMacTests */,
+				0475331F2A2E7041003C0F49 /* ALP_getSchedMacUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -330,6 +567,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		045BEBB52A09EFE4002C5DAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047533042A2E703F003C0F49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047533102A2E7040003C0F49 /* Preview Assets.xcassets in Resources */,
+				0475330D2A2E7040003C0F49 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047533142A2E7041003C0F49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0475331E2A2E7041003C0F49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,6 +643,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		047533022A2E703F003C0F49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047533512A2E7D0E003C0F49 /* ActivityModel.swift in Sources */,
+				047533682A2EA53D003C0F49 /* HomeView.swift in Sources */,
+				0475330B2A2E703F003C0F49 /* ContentView.swift in Sources */,
+				047533092A2E703F003C0F49 /* ALP_getSchedMacApp.swift in Sources */,
+				047533592A2E7EDB003C0F49 /* RegisterViewModel.swift in Sources */,
+				0475335D2A2E816F003C0F49 /* ProfileViewModel.swift in Sources */,
+				0475335F2A2E85F9003C0F49 /* HeaderView.swift in Sources */,
+				047533532A2E7E00003C0F49 /* ProfileModel.swift in Sources */,
+				047533552A2E7EA8003C0F49 /* LoginViewModel.swift in Sources */,
+				047533662A2E9A92003C0F49 /* ActivityListCard.swift in Sources */,
+				0475335B2A2E7FA2003C0F49 /* ActivityViewModel.swift in Sources */,
+				047533642A2E9A6B003C0F49 /* AddActivityView.swift in Sources */,
+				047533622A2E98E3003C0F49 /* ActivityListView.swift in Sources */,
+				047533602A2E8A25003C0F49 /* AddActivityView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047533122A2E7041003C0F49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0475331B2A2E7041003C0F49 /* ALP_getSchedMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0475331C2A2E7041003C0F49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047533252A2E7041003C0F49 /* ALP_getSchedMacUITests.swift in Sources */,
+				047533272A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -395,6 +693,16 @@
 			isa = PBXTargetDependency;
 			target = 045BEB9C2A09EFE3002C5DAE /* ALP_getSched */;
 			targetProxy = 045BEBB82A09EFE4002C5DAE /* PBXContainerItemProxy */;
+		};
+		047533182A2E7041003C0F49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 047533052A2E703F003C0F49 /* ALP_getSchedMac */;
+			targetProxy = 047533172A2E7041003C0F49 /* PBXContainerItemProxy */;
+		};
+		047533222A2E7041003C0F49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 047533052A2E703F003C0F49 /* ALP_getSchedMac */;
+			targetProxy = 047533212A2E7041003C0F49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -516,8 +824,10 @@
 		045BEBC22A09EFE4002C5DAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ALP_getSched/ALP_getSched.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ALP_getSched/Preview Content\"";
@@ -537,6 +847,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xcodecoba.ALP-getSched";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -546,8 +859,10 @@
 		045BEBC32A09EFE4002C5DAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ALP_getSched/ALP_getSched.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ALP_getSched/Preview Content\"";
@@ -567,6 +882,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xcodecoba.ALP-getSched";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -649,6 +967,142 @@
 			};
 			name = Release;
 		};
+		047533292A2E7041003C0F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ALP_getSchedMac/ALP_getSchedMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ALP_getSchedMac/Preview Content\"";
+				DEVELOPMENT_TEAM = U88246Z5JF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jevon.ALP-getSchedMac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0475332A2A2E7041003C0F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ALP_getSchedMac/ALP_getSchedMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ALP_getSchedMac/Preview Content\"";
+				DEVELOPMENT_TEAM = U88246Z5JF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jevon.ALP-getSchedMac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		0475332C2A2E7041003C0F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U88246Z5JF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jevon.ALP-getSchedMacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALP_getSchedMac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ALP_getSchedMac";
+			};
+			name = Debug;
+		};
+		0475332D2A2E7041003C0F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U88246Z5JF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jevon.ALP-getSchedMacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALP_getSchedMac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ALP_getSchedMac";
+			};
+			name = Release;
+		};
+		0475332F2A2E7041003C0F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U88246Z5JF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jevon.ALP-getSchedMacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = ALP_getSchedMac;
+			};
+			name = Debug;
+		};
+		047533302A2E7041003C0F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U88246Z5JF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Jevon.ALP-getSchedMacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = ALP_getSchedMac;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -684,6 +1138,33 @@
 			buildConfigurations = (
 				045BEBC82A09EFE4002C5DAE /* Debug */,
 				045BEBC92A09EFE4002C5DAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047533282A2E7041003C0F49 /* Build configuration list for PBXNativeTarget "ALP_getSchedMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047533292A2E7041003C0F49 /* Debug */,
+				0475332A2A2E7041003C0F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0475332B2A2E7041003C0F49 /* Build configuration list for PBXNativeTarget "ALP_getSchedMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0475332C2A2E7041003C0F49 /* Debug */,
+				0475332D2A2E7041003C0F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0475332E2A2E7041003C0F49 /* Build configuration list for PBXNativeTarget "ALP_getSchedMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0475332F2A2E7041003C0F49 /* Debug */,
+				047533302A2E7041003C0F49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
