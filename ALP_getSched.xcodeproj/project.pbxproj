@@ -32,18 +32,8 @@
 		0475331B2A2E7041003C0F49 /* ALP_getSchedMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475331A2A2E7041003C0F49 /* ALP_getSchedMacTests.swift */; };
 		047533252A2E7041003C0F49 /* ALP_getSchedMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533242A2E7041003C0F49 /* ALP_getSchedMacUITests.swift */; };
 		047533272A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533262A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift */; };
-		047533512A2E7D0E003C0F49 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533502A2E7D0E003C0F49 /* ActivityModel.swift */; };
-		047533532A2E7E00003C0F49 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533522A2E7E00003C0F49 /* ProfileModel.swift */; };
-		047533552A2E7EA8003C0F49 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533542A2E7EA8003C0F49 /* LoginViewModel.swift */; };
-		047533592A2E7EDB003C0F49 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533582A2E7EDB003C0F49 /* RegisterViewModel.swift */; };
-		0475335B2A2E7FA2003C0F49 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475335A2A2E7FA2003C0F49 /* ActivityViewModel.swift */; };
-		0475335D2A2E816F003C0F49 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475335C2A2E816F003C0F49 /* ProfileViewModel.swift */; };
-		0475335F2A2E85F9003C0F49 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475335E2A2E85F9003C0F49 /* HeaderView.swift */; };
-		047533602A2E8A25003C0F49 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BEC262A1220ED002C5DAE /* AddActivityView.swift */; };
-		047533622A2E98E3003C0F49 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533612A2E98E3003C0F49 /* ActivityListView.swift */; };
-		047533642A2E9A6B003C0F49 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533632A2E9A6B003C0F49 /* AddActivityView.swift */; };
-		047533662A2E9A92003C0F49 /* ActivityListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533652A2E9A92003C0F49 /* ActivityListCard.swift */; };
-		047533682A2EA53D003C0F49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533672A2EA53D003C0F49 /* HomeView.swift */; };
+		0475336A2A2F5197003C0F49 /* HeaderViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047533692A2F5197003C0F49 /* HeaderViewMac.swift */; };
+		0475336C2A2F7097003C0F49 /* SplashScreenMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475336B2A2F7097003C0F49 /* SplashScreenMac.swift */; };
 		04B2915D2A2CAEB500EA8703 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2915C2A2CAEB500EA8703 /* LocalNotification.swift */; };
 		04B2915F2A2CD7C500EA8703 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2915E2A2CD7C500EA8703 /* SplashScreen.swift */; };
 		04F7C8162A2A185B0055D224 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F7C8152A2A185B0055D224 /* LoginView.swift */; };
@@ -131,17 +121,8 @@
 		047533202A2E7041003C0F49 /* ALP_getSchedMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALP_getSchedMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		047533242A2E7041003C0F49 /* ALP_getSchedMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_getSchedMacUITests.swift; sourceTree = "<group>"; };
 		047533262A2E7041003C0F49 /* ALP_getSchedMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALP_getSchedMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		047533502A2E7D0E003C0F49 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
-		047533522A2E7E00003C0F49 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		047533542A2E7EA8003C0F49 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		047533582A2E7EDB003C0F49 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		0475335A2A2E7FA2003C0F49 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
-		0475335C2A2E816F003C0F49 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		0475335E2A2E85F9003C0F49 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		047533612A2E98E3003C0F49 /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
-		047533632A2E9A6B003C0F49 /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
-		047533652A2E9A92003C0F49 /* ActivityListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListCard.swift; sourceTree = "<group>"; };
-		047533672A2EA53D003C0F49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		047533692A2F5197003C0F49 /* HeaderViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewMac.swift; sourceTree = "<group>"; };
+		0475336B2A2F7097003C0F49 /* SplashScreenMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenMac.swift; sourceTree = "<group>"; };
 		04B2915C2A2CAEB500EA8703 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		04B2915E2A2CD7C500EA8703 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		04F7C8152A2A185B0055D224 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -347,11 +328,8 @@
 		047533472A2E78BD003C0F49 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0475335E2A2E85F9003C0F49 /* HeaderView.swift */,
-				047533612A2E98E3003C0F49 /* ActivityListView.swift */,
-				047533632A2E9A6B003C0F49 /* AddActivityView.swift */,
-				047533652A2E9A92003C0F49 /* ActivityListCard.swift */,
-				047533672A2EA53D003C0F49 /* HomeView.swift */,
+				047533692A2F5197003C0F49 /* HeaderViewMac.swift */,
+				0475336B2A2F7097003C0F49 /* SplashScreenMac.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,10 +337,6 @@
 		047533482A2E78C6003C0F49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				047533502A2E7D0E003C0F49 /* ActivityModel.swift */,
-				047533522A2E7E00003C0F49 /* ProfileModel.swift */,
-				047533542A2E7EA8003C0F49 /* LoginViewModel.swift */,
-				047533582A2E7EDB003C0F49 /* RegisterViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,8 +344,6 @@
 		047533492A2E78CC003C0F49 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0475335A2A2E7FA2003C0F49 /* ActivityViewModel.swift */,
-				0475335C2A2E816F003C0F49 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -647,20 +619,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047533512A2E7D0E003C0F49 /* ActivityModel.swift in Sources */,
-				047533682A2EA53D003C0F49 /* HomeView.swift in Sources */,
+				0475336C2A2F7097003C0F49 /* SplashScreenMac.swift in Sources */,
 				0475330B2A2E703F003C0F49 /* ContentView.swift in Sources */,
 				047533092A2E703F003C0F49 /* ALP_getSchedMacApp.swift in Sources */,
-				047533592A2E7EDB003C0F49 /* RegisterViewModel.swift in Sources */,
-				0475335D2A2E816F003C0F49 /* ProfileViewModel.swift in Sources */,
-				0475335F2A2E85F9003C0F49 /* HeaderView.swift in Sources */,
-				047533532A2E7E00003C0F49 /* ProfileModel.swift in Sources */,
-				047533552A2E7EA8003C0F49 /* LoginViewModel.swift in Sources */,
-				047533662A2E9A92003C0F49 /* ActivityListCard.swift in Sources */,
-				0475335B2A2E7FA2003C0F49 /* ActivityViewModel.swift in Sources */,
-				047533642A2E9A6B003C0F49 /* AddActivityView.swift in Sources */,
-				047533622A2E98E3003C0F49 /* ActivityListView.swift in Sources */,
-				047533602A2E8A25003C0F49 /* AddActivityView.swift in Sources */,
+				0475336A2A2F5197003C0F49 /* HeaderViewMac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

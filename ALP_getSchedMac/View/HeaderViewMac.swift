@@ -1,5 +1,5 @@
 //
-//  HeaderView.swift
+//  HeaderViewMac.swift
 //  ALP_getSchedMac
 //
 //  Created by MacBook Pro on 06/06/23.
@@ -12,6 +12,7 @@ struct HeaderView: View {
     let subtitle: String
     let angle: Double
     let background: Color
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 0)
@@ -30,11 +31,9 @@ struct HeaderView: View {
             }
             .padding()
         }
-        
-//        .frame(width: UIScreen.main.bounds.width * 3
-//               ,height: 350)
-//        .offset(y: -150)
-//        .padding(.top, -33)
+        .frame(width: NSScreen.main?.visibleFrame.width ?? 0 * 3, height: 350)
+        .offset(y: -150)
+        .padding(.top, -33)
         
         Spacer()
     }
